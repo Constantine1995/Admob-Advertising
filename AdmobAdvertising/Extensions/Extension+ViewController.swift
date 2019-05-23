@@ -6,6 +6,7 @@
 //  Copyright © 2019 mac. All rights reserved.
 //
 import GoogleMobileAds
+
 extension ViewController: GADBannerViewDelegate, GADInterstitialDelegate {
     
     //MARK: Banner

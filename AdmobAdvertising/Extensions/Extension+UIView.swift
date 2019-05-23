@@ -7,7 +7,16 @@
 //
 
 import UIKit
+
 extension UIView {
+    
+    func setShadow() {
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.cornerRadius = 15
+        self.layer.shadowOpacity = 0.1
+        self.layer.shadowRadius = 7
+        self.clipsToBounds = false
+    }
     
     func setAnchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, right: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, paddingTop: CGFloat, paddingLeft: CGFloat, paddingRight: CGFloat, paddingBottom: CGFloat, width: CGFloat = 0, height: CGFloat = 0) {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -35,6 +44,24 @@ extension UIView {
     func setCenterUIScreen(_ view: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        self.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+    func setSize(width: CGFloat, height: CGFloat) {
+        if width != 0 {
+            self.widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+        if height != 0 {
+            self.heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+    }
+    
+    func setCenterXAnchor(_ view: UIView) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    func setCenterYAnchor(_ view: UIView) {
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }

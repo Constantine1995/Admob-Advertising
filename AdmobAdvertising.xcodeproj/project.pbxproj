@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0436D36022967EC6004F1886 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436D35F22967EC6004F1886 /* Extension+UIView.swift */; };
 		0436D3622296808B004F1886 /* Extension+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436D3612296808B004F1886 /* Extension+ViewController.swift */; };
+		048FE243229692D20007087E /* AdsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FE242229692D20007087E /* AdsManager.swift */; };
 		04DBDBC1229673C500C4EA99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBDBC0229673C500C4EA99 /* AppDelegate.swift */; };
 		04DBDBC3229673C500C4EA99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBDBC2229673C500C4EA99 /* ViewController.swift */; };
 		04DBDBC8229673C700C4EA99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DBDBC7229673C700C4EA99 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		0436D35F22967EC6004F1886 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		0436D3612296808B004F1886 /* Extension+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ViewController.swift"; sourceTree = "<group>"; };
+		048FE242229692D20007087E /* AdsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsManager.swift; sourceTree = "<group>"; };
 		04DBDBBD229673C500C4EA99 /* AdmobAdvertising.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdmobAdvertising.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DBDBC0229673C500C4EA99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DBDBC2229673C500C4EA99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
+		048FE244229694CF0007087E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				048FE242229692D20007087E /* AdsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		04DBDBB4229673C500C4EA99 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 		04DBDBBF229673C500C4EA99 /* AdmobAdvertising */ = {
 			isa = PBXGroup;
 			children = (
+				048FE244229694CF0007087E /* Managers */,
 				0436D35E22967EAF004F1886 /* Extensions */,
 				0436D36322968507004F1886 /* Controllers */,
 				0436D36422968511004F1886 /* SupportFiles */,
@@ -234,6 +245,7 @@
 			files = (
 				0436D3622296808B004F1886 /* Extension+ViewController.swift in Sources */,
 				04DBDBC3229673C500C4EA99 /* ViewController.swift in Sources */,
+				048FE243229692D20007087E /* AdsManager.swift in Sources */,
 				0436D36022967EC6004F1886 /* Extension+UIView.swift in Sources */,
 				04DBDBC1229673C500C4EA99 /* AppDelegate.swift in Sources */,
 			);
