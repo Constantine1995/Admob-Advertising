@@ -34,8 +34,8 @@ class ViewController: UIViewController {
     
     func initServices()
     {
-        bannerView = AdsManager.shared.createAndLoadBanner(self)
-        interstitial = AdsManager.shared.createAndLoadInterstitial()
+        bannerView = AdsManager.shared.createAndLoadBanner(delegate: self, viewController: self)
+        interstitial = AdsManager.shared.createAndLoadInterstitial(delegate: self)
     }
     
     func setupBannerView(_ bannerView: GADBannerView) {
