@@ -31,4 +31,10 @@ extension UIView {
             self.heightAnchor.constraint(equalToConstant: height).isActive = true
         }
     }
+    
+    func setCenterUIScreen(_ view: UIView) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        self.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
 }

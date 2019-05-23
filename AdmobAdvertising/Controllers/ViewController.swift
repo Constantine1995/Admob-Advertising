@@ -27,21 +27,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         initServices()
         setupBannerView(bannerView)
-        setupView()
+        setupInterstitialView()
     }
     
-   
     func initServices()
     {
-        guard let bannerID = ProcessInfo.processInfo.environment["BANNER_UNIT_ID"] else { return }
-        
+        bannerView = createAndLoadBanner()
+        interstitial = createAndLoadInterstitial()
+    }
+    
+    func createAndLoadBanner() -> GADBannerView {
+        let bannerID = ProcessInfo.processInfo.environment["BANNER_UNIT_ID"]
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         bannerView.adUnitID = bannerID
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         bannerView.delegate = self
-        
-        interstitial = createAndLoadInterstitial()
+        return bannerView
     }
     
     func createAndLoadInterstitial() -> GADInterstitial {
@@ -52,20 +54,17 @@ class ViewController: UIViewController {
         return interstitial
     }
     
-    
     func setupBannerView(_ bannerView: GADBannerView) {
         view.addSubview(bannerView)
         bannerView.setAnchor(top: nil, left: nil, right: nil, bottom: view.bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: -30, width: 320, height: 50)
         bannerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
-    func setupView() {
-        view.addSubview(interstitialButton)
-              interstitialButton.setAnchor(top: nil, left: nil, right: nil, bottom: view.bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: 200, height: 50)
-        interstitialButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        interstitialButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-
-    }
     
+    func setupInterstitialView() {
+        view.addSubview(interstitialButton)
+        interstitialButton.setAnchor(top: nil, left: nil, right: nil, bottom: view.bottomAnchor, paddingTop: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, width: 200, height: 50)
+        interstitialButton.setCenterUIScreen(view)
+    }
     
     @objc func showInterstitial(_ : UIButton) {
         if interstitial.isReady {
